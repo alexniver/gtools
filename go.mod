@@ -1,4 +1,4 @@
-module gtools
+module github.com/alexniver/gtools
 
 go 1.12
 
