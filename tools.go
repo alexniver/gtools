@@ -84,11 +84,17 @@ func DecodeUnGzip(b []byte, e interface{}) error {
 	return nil
 }
 
-// GetTypeName get name of v
-func GetTypeName(v interface{}) string {
-	if t := reflect.TypeOf(v); t.Kind() == reflect.Ptr {
+// TypeName get name of v
+func TypeName(v interface{}) string {
+	t := reflect.TypeOf(v)
+	switch t.Kind() {
+	case reflect.Array,
+		reflect.Slice,
+		reflect.Map,
+		reflect.Chan,
+		reflect.Ptr:
 		return t.Elem().Name()
-	} else {
+	default:
 		return t.Name()
 	}
 }
