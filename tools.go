@@ -84,9 +84,8 @@ func DecodeUnGzip(b []byte, e interface{}) error {
 	return nil
 }
 
-// TypeName get name of v
-func TypeName(v interface{}) string {
-	t := reflect.TypeOf(v)
+// TypeName get name of Type t
+func TypeName(t reflect.Type) string {
 	switch t.Kind() {
 	case reflect.Array,
 		reflect.Slice,
