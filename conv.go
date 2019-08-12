@@ -18,3 +18,19 @@ func B2a(v bool) string {
 func F2a(v float64) string {
 	return strconv.FormatFloat(v, 'f', -1, 64)
 }
+
+func A2I(v string) (int64, error) {
+	return strconv.ParseInt(v, 10, 64)
+}
+
+func A2Ui(v string) (uint64, error) {
+	return strconv.ParseUint(v, 10, 64)
+}
+
+func A2F(v string) (float64, error) {
+	return strconv.ParseFloat(v, 64)
+}
+
+func A2B(v string) (bool, error) {
+	return strconv.ParseBool(v)
+}
